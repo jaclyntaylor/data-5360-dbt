@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: products_landing
+    database: jaclyntaylor
+    schema: oliver_dw_source
+    tables:
+      - name: customer
+      - name: employee
+      - name: product
+      - name: store
+      - name: orders
+      - name: orderline
+    
+    
