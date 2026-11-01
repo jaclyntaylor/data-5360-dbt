@@ -9,3 +9,9 @@ sources:
       - name: claims
       - name: customers
       - name: policies
+
+  - name: insurance_drive
+    database: jaclyntaylor
+    schema: insurance_dw_source1
+    tables:
+      - name: customer_service_interactions
