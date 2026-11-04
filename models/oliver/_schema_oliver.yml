@@ -11,5 +11,5 @@ models:
     description: "Oliver Product Dimension"
   - name: oliver_dim_store
     description: "Oliver Store Fact"
-  - name: fact_sales
+  - name: oliver_fact_sales
     description: "Oliver Claim Fact"

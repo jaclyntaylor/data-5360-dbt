@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Eco Essentials Customer Dimension"
+  - name: dim_product
+    description: "Eco Essentials Product Dimension"
+  - name: dim_campaign
+    description: "Eco Essentials Campaign Dimension"
+  - name: dim_order
+    description: "Eco Essentials Order Dimension"
+  - name: dim_email
+    description: "Eco Essentials Email Dimension"
+  - name: dim_event_type
+    description: "Eco Essentials Event Type Dimension"
+  - name: dim_date
+    description: "Eco Essentials Date Dimension"
+  - name: fact_sales
+    description: "Eco Essentials Sales Fact"
+  - name: fact_email_event
+    description: "Eco Essentials Email Event Fact"
+  - name: sales
+    description: "Eco Essentials Sales Reporting Model"
