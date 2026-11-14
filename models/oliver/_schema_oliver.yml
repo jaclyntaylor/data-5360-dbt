@@ -22,7 +22,7 @@ models:
       - name: store_state          
         data_tests:
           - accepted_values:
-              values: ['UT', 'CO', 'ID']   
+              values: ['Arizona', 'Alaska', 'Utah']   
 
   - name: fact_sales
     description: "Oliver Claim Fact"
