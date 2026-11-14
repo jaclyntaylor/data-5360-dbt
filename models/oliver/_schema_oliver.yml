@@ -19,16 +19,17 @@ models:
   - name: oliver_dim_store
     description: "Oliver Store Fact"
     columns:
-      - name: store_state          
+      - name: state
         data_tests:
           - accepted_values:
-              values: ['Arizona', 'Alaska', 'Utah']   
+              arguments:
+                values: ['Arizona', 'Alaska', 'Utah']
 
   - name: fact_sales
-    description: "Oliver Claim Fact"
     columns:
-      - name: customer_key
+      - name: store_key
         data_tests:
           - relationships:
-              to: ref('oliver_dim_customer')
-              field: customer_key
+              arguments:
+                to: ref('oliver_dim_store')
+                field: store_key
