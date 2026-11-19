@@ -9,10 +9,30 @@ models:
     description: "Eco Essentials Campaign Dimension"
   - name: dim_order
     description: "Eco Essentials Order Dimension"
+    columns:
+      - name: order_key
+        data_tests:
+          - unique
+          - not_null
   - name: dim_email
     description: "Eco Essentials Email Dimension"
-  - name: dim_event_type
-    description: "Eco Essentials Event Type Dimension"
+    columns: 
+      - name: email_key 
+        data_tests: 
+          - unique 
+          - not_null 
+  - name: dim_event_type 
+    description: "Eco Essentials Event Type Dimension" 
+    columns: 
+      - name: event_type_key 
+        data_tests: 
+          - unique 
+          - not_null 
+      - name: event_type 
+        data_tests: 
+          - not_null 
+          - accepted_values:
+              values: ['CLICK', 'OPEN', 'SENT']
   - name: dim_date
     description: "Eco Essentials Date Dimension"
   - name: fact_sales
