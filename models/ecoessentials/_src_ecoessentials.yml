@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: ecoessentials_landing
+    database: JACLYNTAYLOR
+    schema: ECOESSENTIALS_TRANSACTIONAL_DB
+    tables:
+      - name: customer
+      - name: order
+        identifier: ORDER
+        quoting:
+          identifier: true
+      - name: order_line
+      - name: product
+      - name: promotional_campaign
+
+  - name: ecoessentials_marketing
+    database: JACLYNTAYLOR
+    schema: ECOESSENTIALS_MARKETING
+    tables:
+      - name: marketing_emails

@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Eco Essentials Customer Dimension"
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_product
+    description: "Eco Essentials Product Dimension"
+    columns:
+      - name: product_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_campaign
+    description: "Eco Essentials Campaign Dimension"
+    columns:
+      - name: campaign_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_order
+    description: "Eco Essentials Order Dimension"
+    columns:
+      - name: order_key
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_email
+    description: "Eco Essentials Email Dimension"
+    columns:
+      - name: email_key
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_event_type
+    description: "Eco Essentials Event Type Dimension"
+    columns:
+      - name: event_type_key
+        data_tests:
+          - unique
+          - not_null
+      - name: event_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['CLICK', 'OPEN', 'SENT']
+
+  - name: dim_date
+    description: "Eco Essentials Date Dimension"
+    columns:
+      - name: day_of_week
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3, 4, 5, 6, 7]   # use 0-6 if your SQL uses DAYOFWEEK()
+                quote: false
+
+  - name: fact_sales
+    description: "Eco Essentials Sales Fact"
+    columns:
+      - name: order_key
+        description: "A foreign key to the order dimension"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_order')
+                field: order_key
+
+  - name: fact_email_event
+    description: "Eco Essentials Email Event Fact"
+    columns:
+      - name: event_type_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_event_type')
+                field: event_type_key
+
+  - name: sales
+    description: "Eco Essentials Sales Reporting Model"
+    columns:
+      - name: order_line_id
+        data_tests:
+          - unique
+          - not_null
