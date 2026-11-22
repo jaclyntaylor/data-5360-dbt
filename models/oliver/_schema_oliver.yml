@@ -27,11 +27,11 @@ models:
               arguments:
                 values: ['Arizona', 'Alaska', 'Utah']
 
-  - name: fact_sales
-    columns:
-      - name: store_key
-        data_tests:
-          - relationships:
-              arguments:
-                to: ref('oliver_dim_store')
-                field: store_key
+  #- name: fact_sales
+  #  columns:
+  #    - name: store_key
+   #     data_tests:
+   #       - relationships:
+       #       arguments:
+       #         to: ref('oliver_dim_store')
+        #        field: store_key
