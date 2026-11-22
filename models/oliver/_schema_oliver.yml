@@ -18,10 +18,8 @@ models:
 
   - name: oliver_dim_store
     description: "Oliver Store Fact"
-<<<<<<< HEAD
   - name: oliver_fact_sales
     description: "Oliver Claim Fact"
-=======
     columns:
       - name: state
         data_tests:
@@ -37,4 +35,3 @@ models:
               arguments:
                 to: ref('oliver_dim_store')
                 field: store_key
->>>>>>> b535be1811f0c72be492d05b7b3aeb3d1c72a36d
